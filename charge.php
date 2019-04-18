@@ -21,8 +21,7 @@
     $charge = \Stripe\Charge::create([
         'amount' => 999,
         'currency' => 'cad',
-        'description' => 'Cake charge',
-        'source' => $token,
+        'description' => 'Banana Cake',
         'customer' => $customer -> id,
     ]);   
     
