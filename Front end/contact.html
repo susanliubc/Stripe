@@ -17,7 +17,7 @@
 </head>
 <body id="home" class="scrollspy">
     <!--Main header-->
-    <header class="main-header">
+    <header class="header">
         <div class="navbar-fixed">
             <nav class="orange lighten-3">
                 <div class="container">
@@ -28,7 +28,7 @@
                         </a>
                         <ul class="right hide-on-med-and-down">
                             <li>
-                                <a href="#home">Home</a>
+                                <a href="index.html">Home</a>
                             </li>
                             <li>
                                 <a href="sweet.html">Sweets</a>
@@ -43,7 +43,7 @@
         </div>
         <ul id="mobile-nav" class="sidenav">
             <li>
-                <a href="#home">Home</a>
+                <a href="index.html">Home</a>
             </li>
             <li>
                 <a href="sweet.html">Sweets</a>
@@ -52,48 +52,14 @@
                 <a href="contact.html">Contact</a>
             </li>
         </ul>
-        <div class = "showcase container">
-            <div class = "col s12 main-text">
-                <h3 class="amber-text text-darken-4">Soul healing sweets</h3>
-            </div>
-        </div> 
     </header>
 
-    <!--Section: introduction-->
-    <section class="section section-introduction" id="introduction">
-        <div class="container center">
-            <h4 class="grey-text">Our Story</h4>
-            <p class="flow-text amber-text text-darken-3">Founded in 2009, SweetTime is a local desert shop located in beautiful North Burnaby. We serve various deserts and drinks to enpower people and heal their souls in daily life.</p>
-        </div>
-    </section>
-
-    <!--Section: feature desert-->
-    <section class="section section-feature center amber-text text-darken-3" id="feature">
+    <!--Section: contact-->
+    <section class="section section-contact center id="googlemap">
         <div class="container">
-            <h3 class="center feature-header">Feature Deserts</h3>
+            <h3 class="center feature-header amber-text text-darken-3">Contact</h3>
             <div class="row">
-                <div class="col s12 m6 l4">
-                    <img src="img/cake-coffee-1.jpg" data-src="img/cookie-1.jpg" class="lazy materialboxed responsive-img" data-caption="Butter Cookie">
-                </div>
-                <div class="col s12 m6 l4">
-                    <img src="img/cake-coffee-1.jpg" data-src="img/cake-2.jpg" class="lazy materialboxed responsive-img" data-caption="Cup Cake">
-                </div>
-                <div class="col s12 m6 l4">
-                    <img src="img/cake-coffee-1.jpg" data-src="img/cake-3.jpg" class="lazy materialboxed responsive-img" data-caption="Orange Cake">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 m6 l4">
-                    <img src="img/cake-coffee-1.jpg" data-src="img/cake-9.jpg" class="lazy materialboxed responsive-img" data-caption="Cream Butter Cake">
-                </div>
-                <div class="col s12 m6 l4">
-                    <img src="img/cake-coffee-1.jpg" data-src="img/cake-4.jpg" class="lazy materialboxed responsive-img" data-caption="Fruit Cake">
-                </div>
-                <div class="col s12 m6 l4">
-                    <img src="img/cake-coffee-1.jpg" data-src="img/cake-7.jpg" class="lazy materialboxed responsive-img" 
-                    data-caption="Cherry Pie">
-                </div>
-            </div>
+                
         </div>
                
     </section>
@@ -109,6 +75,9 @@
 
       <!--Lazy load images using yall.js library-->
       <script src="node_modules/yall-js/dist/yall.min.js"></script>
+
+      <!--Google API-->
+      <script src="http://maps.googleapis.com/maps/api/js"></script>
       <script>
         document.addEventListener("DOMContentLoaded", yall);
       </script>
@@ -121,14 +90,46 @@
           const sideNav = document.querySelector('.sidenav');
           M.Sidenav.init(sideNav, {});
 
-          //Material boxed
-          const mb = document.querySelectorAll('.materialboxed');
-          M.Materialbox.init(mb, {});
-
+          
           //Scrollspy
           const ss = document.querySelectorAll('.scrollspy');
           M.ScrollSpy.init(ss, {});
         })
+      </script>
+
+      <!--Initialize Google Map-->
+      <script>
+        //map positions
+        const position = [42.361145, -71.0570837];
+        const centerPosition = [42.377815, -70.9811337];
+
+        function showGoogleMaps() {
+            const latLng = new google.maps.LatLng(postion[0], position[1]);
+            const centerLatLng = new google.maps.LatLng(centerPostion[0], centerPosition[1]);
+        }
+
+        //map options
+        const mapOptions = {
+            zoom: 12,
+            streetViewControl: false,
+            scaleControl: true,
+            mapTypeId: google.maps.mapTypeId.ROADMAP,
+            center: centerLatLng
+        }
+
+        //create mapmap = new google.maps.Map(document.getElementById('googlemap').mapOptions);
+
+        //show marker
+        marker = new google.maps.Marker({
+            position: LatLng,
+            map: map,
+            draggable: false,
+            animation: goolge.maps.Animation.DROP
+        });
+
+        //maps addEvent
+        google.maps.event.addDomListener(window,'load', showGoogleMaps);
+
       </script>
 </body>
 </html>
