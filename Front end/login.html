@@ -67,12 +67,12 @@
         </ul>
     </header>
 
-    <!--Section: contact-->
-    <section class="section section-contact center id="contact">
+    <!--Section: login-->
+    <section class="section section-login center id="login">
         <div class="container">    
             <div class="row">
-                <div class="col s12 m8 offset-m2">
-                    <h3 class="center amber-text text-darken-4">Contact</h3>
+                <div class="col s12 m8 offset-m2 l4">
+                    <h3 class="center amber-text text-darken-4">Login</h3>
                     <div class="input-field">
                         <input type="text" id="name">
                         <label for="name">Name</label>
@@ -85,20 +85,12 @@
                         <input type="password" id="password">
                         <label for="password">Password</label>
                     </div>
-                    <div class="input-field">
-                        <textarea type="text" id="textarea" class="materialize-textarea"></textarea>
-                        <label for="textarea">Message</label>
-                    </div>
-                    <input type="submit" value="Submit" class="btn orange lighten-3">
+                    <input type="submit" value="Login" class="btn orange lighten-3">
                 </div>
             </div>       
         </div>           
     </section>
 
-    <!--Section: googlemap-->
-    <section class="section section-googlemap center">
-        <div id="googlemap"></div>
-    </section>
     <footer class="section center orange lighten-3 white-text">
         <p class="flow-text">
             SweetTime &copy; 2019
@@ -132,38 +124,7 @@
         })
       </script>
 
-      <!--Initialize Google Map-->
-      <script>
-        //map positions
-        const position = [42.361145, -71.0570837];
-        const centerPosition = [42.377815, -70.9811337];
-
-        function showGoogleMaps() {
-            const latLng = new google.maps.LatLng(postion[0], position[1]);
-            const centerLatLng = new google.maps.LatLng(centerPostion[0], centerPosition[1]);
-        }
-
-        //map options
-        const mapOptions = {
-            zoom: 12,
-            streetViewControl: false,
-            scaleControl: true,
-            mapTypeId: google.maps.mapTypeId.ROADMAP,
-            center: centerLatLng
-        }
-
-        //create mapmap = new google.maps.Map(document.getElementById('googlemap').mapOptions);
-
-        //show marker
-        marker = new google.maps.Marker({
-            position: LatLng,
-            map: map,
-            draggable: false,
-            animation: goolge.maps.Animation.DROP
-        });
-
-        //maps addEvent
-        google.maps.event.addDomListener(window,'load', showGoogleMaps);
+      
 
       </script>
 </body>
